@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  url: 'https://github.com/rurusyu/rurusyu.github.io.git',
+  url: 'https://rurusyu.github.io/',
   title: 'Blog by nathan',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
@@ -10,7 +10,7 @@ module.exports = {
   googleAnalyticsId: 'UA-73379983-2',
   menu: [
     {
-      label: 'Articles',
+      label: '[TIL]Programming',
       path: '/'
     },
     {
@@ -23,9 +23,9 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Nathan',
+    photo: '/annoymous.jpg',
+    bio: 'I"ll be Global Top Software Engineer',
     contacts: {
       email: '#',
       telegram: '#',
