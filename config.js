@@ -2,7 +2,7 @@
 
 module.exports = {
   url: 'https://github.com/rurusyu/rurusyu.github.io.git',
-  title: 'Blog by John Doe',
+  title: 'Blog by nathan',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
