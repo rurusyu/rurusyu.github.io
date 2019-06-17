@@ -25,7 +25,8 @@ module.exports = {
   author: {
     name: 'Nathan',
     photo: '/annoymous.jpg',
-    bio: 'I"ll be Global Top Software Engineer',
+    bio: `'I"ll be Global Top Software Engineer.'
+           https://avengersrhydon1121.tistory.com/`,
     contacts: {
       email: '#',
       telegram: '#',
