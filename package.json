@@ -18,7 +18,10 @@
     "test:watch": "jest --watch --config ./jest/jest-config.js",
     "release": "standard-version"
   },
-  "repository": "https://github.com/alxshelepenok/gatsby-starter-lumen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git"
+  },
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -81,7 +84,8 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "yarn": "^1.16.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
@@ -118,5 +122,9 @@
     "stylelint": "10.1.0",
     "stylelint-config-recommended-scss": "3.3.0",
     "stylelint-scss": "3.8.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/alxshelepenok/gatsby-starter-lumen/issues"
+  },
+  "homepage": "https://github.com/alxshelepenok/gatsby-starter-lumen#readme"
 }
