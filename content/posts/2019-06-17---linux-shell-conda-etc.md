@@ -56,6 +56,58 @@ TEXT USER INTERFACE :  쉘을 돌려주는 프로그램임.
 파이썬3에도 기본적으로 venv라는 가상환경이 존재하지만, 미니콘다를 사용하는 이유는 관리가 편하다.
 
 장점은 어느 디렉토리에서 실행해도 상관없다.
+
+```
+#### MINI CONDA 설치
+```
+미니 콘다 공식홈에서 OS사양에 맞게 다운 받은 후 
+
+bash Miniconda3-latest-Linux-x86_64.sh
+
+를 실행 후 계속 yes 를 치면 설치가 완료.
+```
+#### 설치확인
+
+##### 설치 후 터미널에 conda라고 쳤을때 명령을 찾지 못한 경우 path를 찾지 못해서이다.
+##### zsh를 사용한다면 .zshrc 파일을 열고 맨 마지막 줄에 아래와 같이 입력해라. 절대 수정금지
+```
+$ tail -n 1 $HOME/.bash_profile
+export PATH="$HOME/miniconda3/bin:$PATH"
+$ source $HOME/.bash_profile
+```
+
+#### 가상환경 만들기
+```
+터미널에 conda create -n 가상환경이름 
+```
+##### 치고 y 누른다.
+##### 가상환경에 들어(나)가는 방법은 
+```
+source (de)activate 가상환경이름
+```
+
+#### 가상환경 명령어 & 파이썬 명령어
+```
+가상환경 명령은 conda env 로 시작하고 동사를 붙인다. 동사는
+
+1. list: 가상환경 목록
+2. create -n "가상환경 이름": 새로운 가상환경 생성.
+      1) -n "가상환경 이름" 이 꼭 필요하고,
+      2) 특정 파이선 버전이 필요하면 python=python2 또는 python=python3 같은 형식으로 지정한다.
+3. remove: 가상환경을 지운다
+```
+```
+파이선 패키지 명령은 현재 가상환경의 패키지를 관리한다. conda로 시작하고 동사를 붙인다. 동사는
+
+1. list: 설치된 패키지 목록
+2. install "패키지 이름": 패키지를 설치한다.
+    1) conda에 등록되어있지 않아서 설치할 수 없는 패키지도 있다.
+    2) 그럴 땐 pip install로 설치하면 된다.
+3. uninstall "패키지 이름": 패키지를 지운다.
+```
+자료출처 : https://graspthegist.com/post/conda-revisited/
+
+
 ```
 ### 가장 기본적인 리눅스 명령어
 ```
