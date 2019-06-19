@@ -2,7 +2,7 @@
 
 module.exports = {
   url: 'https://rurusyu.github.io/',
-  title: 'Blog by nathan',
+  title: 'Blog by nathan with Wecode',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
