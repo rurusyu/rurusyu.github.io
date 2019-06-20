@@ -1,4 +1,171 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 17 Jun 2019 13:50:45 GMT</lastBuildDate><item><title><![CDATA[[개발환경설정] 개발환경 셋팅]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/setting-develop-enviorment/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/setting-develop-enviorment/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h2 id=&quot;리눅스-디렉토리&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC&quot; aria-label=&quot;리눅스 디렉토리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리눅스 디렉토리&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan with Wecode]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 20 Jun 2019 01:33:05 GMT</lastBuildDate><item><title><![CDATA[[React] Event Handle, state 상태관리, jsx for문 ]]></title><description><![CDATA[리액트 event]]></description><link>https://rurusyu.github.io//posts/react-event/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/react-event/</guid><pubDate>Wed, 19 Jun 2019 21:00:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-이벤트-핸들러&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC&quot; aria-label=&quot;리액트 이벤트 핸들러 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 이벤트 핸들러&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;트윗메인화면에 트윗을 입력하고 버튼 누르면 아래에 트윗 리스트 나오게 한다.&lt;/li&gt;
+&lt;li&gt;트윗메인화면에서 textarea는 TweetRightBox라는 컴포넌트로 불러와서 메인화면에 조립했다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&quot;트윗메인화면&quot;&gt;&lt;a href=&quot;#%ED%8A%B8%EC%9C%97%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4&quot; aria-label=&quot;트윗메인화면 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;트윗메인화면&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;...(생략)
+&amp;lt;TweetRightBox onChange={this.handleChange} onClick={this.handleClick} value={this.state.inputMessage}/&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;TweetRightBox에서 이벤트값을 props로 넘겨서 트윗메인 화면에서 받은 다음, 이벤트 구현하였다.&lt;/p&gt;
+&lt;p&gt;onChange는 textarea 내에서 값이 변화하면 브라우져가 인식한다. 최종적으로 넘길데이터는 &lt;/p&gt;
+&lt;p&gt;유저이름, 메시지내용, 프로필사진, 트윗생성날짜이다(유저가 정한다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; handleChange =(e) =&amp;gt; {
+     this.setState({
+         username : this.props.username,   //다른 컴포넌트에서 값을 불러왔음.
+         inputMessage : e.target.value,    // onChange의 e(이벤트)값으로 현재 입력값 추출
+         propfilePhoto : &amp;quot;😻&amp;quot;,
+         created_at : this.dateFunc(),
+     });
+ }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;트윗메인-화면의-state&quot;&gt;&lt;a href=&quot;#%ED%8A%B8%EC%9C%97%EB%A9%94%EC%9D%B8-%ED%99%94%EB%A9%B4%EC%9D%98-state&quot; aria-label=&quot;트윗메인 화면의 state permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;트윗메인 화면의 state&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;state = {
+      TweetList : [],    // 결국 이 배열안에 내용을 랜더링 
+      username : &amp;quot;&amp;quot;,
+      inputMessage :&amp;quot;&amp;quot;,
+      propfilePhoto : &amp;quot;&amp;quot;, 
+      created_at : &amp;quot;&amp;quot;       
+  }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;state 값은 통상 위와 같은 패턴으로 작성하고, 데이터만 관리한다.  &lt;/p&gt;
+&lt;p&gt;리스트에 생성될 HTML은 render()안에 return에서 생성해준다.  &lt;/p&gt;
+&lt;h4 id=&quot;입력-후-버튼-클릭시-이벤트&quot;&gt;&lt;a href=&quot;#%EC%9E%85%EB%A0%A5-%ED%9B%84-%EB%B2%84%ED%8A%BC-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%9D%B4%EB%B2%A4%ED%8A%B8&quot; aria-label=&quot;입력 후 버튼 클릭시 이벤트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;입력 후 버튼 클릭시 이벤트&lt;/h4&gt;
+&lt;p&gt;버튼클릭시 이벤트는 유저이름, 메시지, 사진, 생성날짜가 트윗으로 들어가야한다.&lt;/p&gt;
+&lt;h1 id=&quot;리액트에서-가장-주의해야할점&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EA%B0%80%EC%9E%A5-%EC%A3%BC%EC%9D%98%ED%95%B4%EC%95%BC%ED%95%A0%EC%A0%90&quot; aria-label=&quot;리액트에서 가장 주의해야할점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트에서 가장 주의해야할점!&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;setState안에 배열값은 직접적으로 변경하면 안된다. &lt;/li&gt;
+&lt;li&gt;그럼 어떻게 ?? 기존값을 복사해서 저장한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; handleClick =(e)=&amp;gt;{
+    const {username,inputMessage,propfilePhoto,created_at} = this.state 
+    
+    //1.입력하면 들어오는 값을 새로 newTweet이라는 객체에 담아서
+    const newTweet ={
+        username : username,
+        inputMessage : inputMessage,
+        propfilePhoto : propfilePhoto,
+        created_at : created_at
+    }
+    //2. newTweets라는 배열에 넣는다.
+    const newTweets = [newTweet, ...this.state.TweetList]  //이렇게 넣으면 가장 최신 트윗이 위로온다. 
+                      //this.state.TweetList =&amp;gt; 위에 state안에 있는 배열임. 
+                      // ...[배열]은 배열의 복사를 의미.                                
+
+    //3. textarea 값 초기화 및 리스트유지.     
+    this.setState({
+        inputMessage : &amp;quot;&amp;quot;,
+        TweetList : newTweets
+    })
+ }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;html생성--map-이용패턴&quot;&gt;&lt;a href=&quot;#html%EC%83%9D%EC%84%B1--map-%EC%9D%B4%EC%9A%A9%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;html생성  map 이용패턴 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTML생성 =&gt; map 이용(패턴)&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;1. jsx문법으로 html양식을 생성하고, state의 데이터값을 입력한다.
+2. jsx에서 for문을 돌릴때는 key값이 반드시 필수. index로 키값하는 것은 좋지 않다. 유니크한 값이 좋다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;ul id=&amp;quot;list-root&amp;quot;&amp;gt;
+   {
+      this.state.TweetList ? this.state.TweetList.map((tweet, i) =&amp;gt; {  //맵에 대한 키값 i
+          return(
+             &amp;lt;div class=&amp;quot;tweet-wrap-list&amp;quot;&amp;gt;
+             &amp;lt;div class=&amp;quot;user-photo&amp;quot;&amp;gt;{tweet.propfilePhoto}&amp;lt;/div&amp;gt;
+             &amp;lt;div class=&amp;quot;wrap-name-and-comment-and-times&amp;quot;&amp;gt;
+               &amp;lt;div class=&amp;quot;user-name&amp;quot;&amp;gt;{tweet.username}&amp;lt;/div&amp;gt;
+               &amp;lt;div class=&amp;quot;user-comment&amp;quot;&amp;gt;{tweet.inputMessage}             
+               &amp;lt;/div&amp;gt;
+               &amp;lt;span class=&amp;quot;written-times&amp;quot;&amp;gt;{tweet.created_at}&amp;lt;/span&amp;gt;
+             &amp;lt;/div&amp;gt;          
+           &amp;lt;/div&amp;gt;  
+          );
+      }) : &amp;quot;&amp;quot; 
+   }
+ &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;기억할점&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EC%96%B5%ED%95%A0%EC%A0%90&quot; aria-label=&quot;기억할점 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기억할점!&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;리액트 state는 클래스로 선언된 곳에서 상태관리로 사용한다. 함수형은 No!&lt;/li&gt;
+&lt;li&gt;state 상태관리는 데이터만 관리! 그리고 그 데이터 부분을 랜더링하게 해주는 배열 필요!
+(데이터와 배열)&lt;/li&gt;
+&lt;li&gt;jsx에서 for문 돌릴때 키값이 필요하다. &lt;/li&gt;
+&lt;li&gt;화면에 자료 뿌리는 것은 html부분은 통상 for나 map을 이용해서 뿌리고, 그사이에 데이터를 넣어준다. &lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[[React] Props, JSX, Router]]></title><description><![CDATA[리액트 prop]]></description><link>https://rurusyu.github.io//posts/react-props/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/react-props/</guid><pubDate>Tue, 18 Jun 2019 23:37:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;props&quot;&gt;&lt;a href=&quot;#props&quot; aria-label=&quot;props permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Props&lt;/h3&gt;
+&lt;p&gt;보통 Props는 부모컴포넌트에서 자식 컴포넌트로 데이터를 이동할 때 준다고 한다.&lt;/p&gt;
+&lt;p&gt;그럼 어떻게 주는데? 초보자 입장에서는 강의따라하면 알아듣지만, 막상 혼자 해보려면 힘들다..&lt;/p&gt;
+&lt;p&gt;오늘 트위터를 로그인화면, 회원가입, 트위터 메인화면을 리액트로 짧은 시간에 옮겼다.&lt;/p&gt;
+&lt;p&gt;정말 오랜만에 리액트를 다시 해서 그런지 가물가물..&lt;/p&gt;
+&lt;p&gt;기존 코드를 리액트로 옮기는 과정에 회원가입, 로그인에는 input창, 버튼이 있는데,&lt;/p&gt;
+&lt;p&gt;나는 input, button 마져 컴포넌트로 빼서 구성을 했다.&lt;/p&gt;
+&lt;p&gt;로그인 화면안에 있는 input 창은 2개, 그안에 placeholder 내용도 Enter ID, Enter Password 였는데,&lt;/p&gt;
+&lt;p&gt;컴포넌트로 빼버렸으니, 어떻게 로그인 화면에 input 컴포넌트를 import 받아 각각 내용을 수정할 수 있을지&lt;/p&gt;
+&lt;p&gt;확인했고, props를 썼다.&lt;/p&gt;
+&lt;h3 id=&quot;componentsinputinputjs&quot;&gt;&lt;a href=&quot;#componentsinputinputjs&quot; aria-label=&quot;componentsinputinputjs permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;../Components/Input/input.js&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;#39;react&amp;#39;
+//css생략
+
+const Input =(props)=&amp;gt; {
+    return(
+        &amp;lt;&amp;gt;
+            &amp;lt;input type={props.type} placeholder={props.placeholder}/&amp;gt;
+        &amp;lt;/&amp;gt;
+    )
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 컴포넌트를 아래의 js에 삽입.&lt;/p&gt;
+&lt;h3 id=&quot;loginjs&quot;&gt;&lt;a href=&quot;#loginjs&quot; aria-label=&quot;loginjs permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;login.js&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &amp;#39;react&amp;#39;
+//css 생략
+import Input from &amp;#39;../Components/Input/Input&amp;#39;
+
+const Login =()=&amp;gt;{
+    return(
+        &amp;lt;&amp;gt;
+            ..생략
+            &amp;lt;Input type=&amp;quot;text&amp;quot; placeholder=&amp;quot; Enter ID&amp;quot;&amp;gt;
+            &amp;lt;Input type=&amp;quot;password&amp;quot; placeholder=&amp;quot; Enter Password&amp;quot;&amp;gt;
+            ...생략
+        &amp;lt;/&amp;gt;
+    )
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;받아오는 쪽에서는 type, placeholder 부분만 기존 컴포넌트와 통일 시켜주면 되고, 그 안에 이름만 넣어주면 사용할 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;jsx&quot;&gt;&lt;a href=&quot;#jsx&quot; aria-label=&quot;jsx permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSX&lt;/h2&gt;
+&lt;p&gt;JSX 한마디로 정의하면, 자바스크립트안에 사용하는 HTML이다.&lt;/p&gt;
+&lt;h2 id=&quot;router&quot;&gt;&lt;a href=&quot;#router&quot; aria-label=&quot;router permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Router&lt;/h2&gt;
+&lt;p&gt;리액트 라우터는 웹에서 라우트를 (&lt;a href=&quot;http://127.0.0.1/Login&quot;&gt;http://127.0.0.1/Login&lt;/a&gt; 에서 Login은 Path 가르킴, 엔드포인트 라는 단어도 있음)  &lt;/p&gt;
+&lt;p&gt;를 브라우져가 요청하면, 해당페이지에서 로그인이라는 컴포넌트로 대체된다.  &lt;/p&gt;
+&lt;p&gt;SPA이다보니, 하나의 HTML에 요청 주소값에 따라 컴포넌트만 랜더링해서 보여주기 때문에  &lt;/p&gt;
+&lt;p&gt;사용한다.&lt;/p&gt;
+&lt;h1 id=&quot;react-router-vs-react-router-dom-차이&quot;&gt;&lt;a href=&quot;#react-router-vs-react-router-dom-%EC%B0%A8%EC%9D%B4&quot; aria-label=&quot;react router vs react router dom 차이 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;React-router vs React-router-dom 차이&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;react-router는 코어까지 포함된 (master 브랜치에 있음) 라이브러리 입니다.
+
+그리고 react-router-dom은 그 중에서 DOM이 인식할 수 있는 컴포넌트들만 뺀 라이브러리 입니다.  
+
+예를 들어 &amp;lt;Link&amp;gt;(a태그로 렌더링되는), &amp;lt;BrowserRouter&amp;gt;와 같은 컴포넌트들이 있습니다.  
+
+따라서, 코어까지 필요하지 않다면? 선택은 나의 몫&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[알고리즘 문제] 1일차 twoSum]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/algorithmn-problem-1/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-problem-1/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* 문제
+twoSum함수에 숫자배열과 &amp;#39;특정 수&amp;#39;를 인자로 넘기면,
+더해서 &amp;#39;특정 수&amp;#39;가 나오는 index를 배열에 담아 return해 주세요.
+
+nums: 숫자 배열
+target: 두 수를 더해서 나올 수 있는 합계
+return: 두 수의 index를 가진 숫자 배열
+
+
+예를 들어,
+nums은 [4, 9, 11, 14]
+target은 13 
+
+nums[0] + nums[1] = 4 + 9 = 13 이죠?
+
+그러면 [0, 1]이 return 되어야 합니다.
+
+* 가정
+target으로 보내는 합계의 조합은 배열 전체 중에 2개 밖에 없다고 가정하겠습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Leetcode 1번 문제다.&lt;/p&gt;
+&lt;h3 id=&quot;요구사항1-두개의-숫자의-합이-target과-같아야함&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD1-%EB%91%90%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%95%A9%EC%9D%B4-target%EA%B3%BC-%EA%B0%99%EC%95%84%EC%95%BC%ED%95%A8&quot; aria-label=&quot;요구사항1 두개의 숫자의 합이 target과 같아야함 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항1. 두개의 숫자의 합이 target과 같아야함&lt;/h3&gt;
+&lt;h3 id=&quot;요구사항2-두개-숫자의-인덱스값을-리턴받는다&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD2-%EB%91%90%EA%B0%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%92%EC%9D%84-%EB%A6%AC%ED%84%B4%EB%B0%9B%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;요구사항2 두개 숫자의 인덱스값을 리턴받는다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항2. 두개 숫자의 인덱스값을 리턴받는다.&lt;/h3&gt;
+&lt;p&gt;풀이)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const twoSum = (nums, target) =&amp;gt; {
+   for(let i=0; i&amp;lt;nums.length; i++){
+     for(let j=0; j&amp;lt;nums.length; j++){
+       if(nums[j] === target - nums[i]){
+         return [i, j];
+       }
+     }
+   }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[개발환경설정] 개발환경 셋팅]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/setting-develop-enviorment/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/setting-develop-enviorment/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h2 id=&quot;리눅스-디렉토리&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC&quot; aria-label=&quot;리눅스 디렉토리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리눅스 디렉토리&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;   리눅스의 디렉토리는 트리구조이며, 크게 분류했을 때 2가지이다.
      1. 시스템 디렉토리 : 시스템 돌아가는데 필요한 디렉토리
      2. 유저 디렉토리 : 우리이름으로 된 디렉토리이고, 홈 디렉토리는 유저의 공간이다.
@@ -88,38 +255,7 @@ history : 일정갯수 이상 사용했던 명령어를 특정 파일에 저장�
 ps : 현재 돌고 있는 프로세스를 보여주는 가장 기본적인 명령어
 man : 메뉴얼 확인 =&gt; tldr 설치해서 사용함.(메뉴얼은 읽기 힘듦 그래서 설치함)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/cat&quot;&gt;http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/cat&lt;/a&gt; 참고&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[알고리즘 문제] 1일차 twoSum]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/algorithmn-problem-1/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-problem-1/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* 문제
-twoSum함수에 숫자배열과 &amp;#39;특정 수&amp;#39;를 인자로 넘기면,
-더해서 &amp;#39;특정 수&amp;#39;가 나오는 index를 배열에 담아 return해 주세요.
-
-nums: 숫자 배열
-target: 두 수를 더해서 나올 수 있는 합계
-return: 두 수의 index를 가진 숫자 배열
-
-
-예를 들어,
-nums은 [4, 9, 11, 14]
-target은 13 
-
-nums[0] + nums[1] = 4 + 9 = 13 이죠?
-
-그러면 [0, 1]이 return 되어야 합니다.
-
-* 가정
-target으로 보내는 합계의 조합은 배열 전체 중에 2개 밖에 없다고 가정하겠습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Leetcode 1번 문제다.&lt;/p&gt;
-&lt;h3 id=&quot;요구사항1-두개의-숫자의-합이-target과-같아야함&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD1-%EB%91%90%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%95%A9%EC%9D%B4-target%EA%B3%BC-%EA%B0%99%EC%95%84%EC%95%BC%ED%95%A8&quot; aria-label=&quot;요구사항1 두개의 숫자의 합이 target과 같아야함 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항1. 두개의 숫자의 합이 target과 같아야함&lt;/h3&gt;
-&lt;h3 id=&quot;요구사항2-두개-숫자의-인덱스값을-리턴받는다&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD2-%EB%91%90%EA%B0%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%92%EC%9D%84-%EB%A6%AC%ED%84%B4%EB%B0%9B%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;요구사항2 두개 숫자의 인덱스값을 리턴받는다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항2. 두개 숫자의 인덱스값을 리턴받는다.&lt;/h3&gt;
-&lt;p&gt;풀이)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const twoSum = (nums, target) =&amp;gt; {
-   for(let i=0; i&amp;lt;nums.length; i++){
-     for(let j=0; j&amp;lt;nums.length; j++){
-       if(nums[j] === target - nums[i]){
-         return [i, j];
-       }
-     }
-   }
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[Gatsby.js] 개츠비로 블로그 만들기]]></title><description><![CDATA[리액트 라이브러리의 한 종류 인 gatsby.js.로 블로그 만들기]]></description><link>https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</guid><pubDate>Fri, 14 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-라이브러리는-프론트-엔드-3대장-중-하나이며&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%8A%94-%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%97%94%EB%93%9C-3%EB%8C%80%EC%9E%A5-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B4%EB%A9%B0&quot; aria-label=&quot;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며,&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[Gatsby.js] 개츠비로 블로그 만들기]]></title><description><![CDATA[리액트 라이브러리의 한 종류 인 gatsby.js.로 블로그 만들기]]></description><link>https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</guid><pubDate>Fri, 14 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-라이브러리는-프론트-엔드-3대장-중-하나이며&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%8A%94-%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%97%94%EB%93%9C-3%EB%8C%80%EC%9E%A5-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B4%EB%A9%B0&quot; aria-label=&quot;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며,&lt;/h3&gt;
 &lt;h4 id=&quot;cracreate-react-app-gatsbyjs-nextjs-로-실행할-수-있다&quot;&gt;&lt;a href=&quot;#cracreate-react-app-gatsbyjs-nextjs-%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4&quot; aria-label=&quot;cracreate react app gatsbyjs nextjs 로 실행할 수 있다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CRA(create-react-app), Gatsby.js, Next.js 로 실행할 수 있다.&lt;/h4&gt;
 &lt;p&gt;이번에는 그 중에서 Gatsby를 이용해서 블로그를 만들어 보려고 한다.  &lt;/p&gt;
 &lt;h1 id=&quot;gatsby-js-란-무엇인가&quot;&gt;&lt;a href=&quot;#gatsby-js-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&quot; aria-label=&quot;gatsby js 란 무엇인가 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Gatsby JS 란 무엇인가&lt;/h1&gt;
