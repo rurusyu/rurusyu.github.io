@@ -1,0 +1,54 @@
+---
+title: "Ajax, CORS "
+date: "2019-06-19T21:00:11.121Z"
+template: "post"
+draft: false
+slug: "/posts/ajax-cors/"
+category: "Web"
+tags:
+ - "CORS"
+ - "AJAX"
+description: "웹개발때 알아야할 개념"
+---
+
+### Ajax
+1. AJAX는 Asynchronous JavaScript And XML
+2. 필요할 때 api를 호출하고, 바꾸고 싶은 DOM 부분만 바꿔주는 것이 AJAX의 핵심
+
+### JSON
+1. 13일의 금요일 제이슨이 아님
+2. JavaScript Object Notation의 줄임말
+3. 프론트엔드의 언어는 자바스크립트이고 백엔드의 언어는 여러가지이다. 각 언어마다 데이터를 주고 받아야하는데, 
+   그때마다 다른 양식으로 준다면??? 프론트를 구성하는 자바스크립트에 기준을 맞춘 방식임.
+4. 규칙
+```
+1) { 로 시작해서 } 로 끝난다.
+2) key는 무조건 "" 쌍따옴표를 붙여줘야한다.
+3) value에 string이 올 경우에도 무조건 "" 쌍따옴표를 붙여줘야한다.
+4) 다음에 데이터가 더 있을 때만 , comma를 붙일 수 있다.
+```  
+
+### CORS
+1. CORS는 Cross Origin Resource Sharing 의 줄임말로, 한국어로는 '동일출처정책'이라고 하는데 보통은 CORS(씨오알에스)라고 한다.
+2. 왜 생기냐? 호출하는 쪽의 도메인주소와, 호출당하는 쪽의 도메인주소가 일치하지 않을 때, 브라우져가 보안상의 이유로 차단한다.
+3. 통상은 백엔드 개발자에게 말하면 조치를 해준다 해서 그냥 넘기지 말고, 반드시 어떻게 처리하는지 알도록!
+
+### GET, POST방식
+1. GET은 주소줄에 값이 ?뒤에 쌍으로 이어붙고 POST는 숨겨져서(body안에) 보내진다.
+2. POST방식은 바디안에 데이터 들어오기때문에 백엔드쪽에서는 바디를 파싱할 수 있어야한다.
+3. GET은 URL에 이어붙기 때문에 길이제한이 있어서 많은양의 데이터는 보내기 어렵고 POST는 많은 양의 보내기에도 적합하다.(역시 용량제한은 있지만)
+4. GET은 값을 조회할때 사용, POST는 값을 생성, 수정할때 사용
+5. HTTP메소드의 일환으로 6가지 정도 있다.
+
+### fetch()
+1. API를 호출할때 사용하는 함수
+2. 패턴이 있다.
+```
+fetch('api주소')
+  .then(function(response) {     
+    return response.json();   
+  })   
+  .then(function(myJson) {     
+    //응답 받은 data로 뭔가 한다. 
+  });
+```
