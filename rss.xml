@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan with Wecode]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jun 2019 00:24:11 GMT</lastBuildDate><item><title><![CDATA[[React] Event Handle, state 상태관리, jsx for문 ]]></title><description><![CDATA[리액트 event]]></description><link>https://rurusyu.github.io//posts/react-event/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/react-event/</guid><pubDate>Wed, 19 Jun 2019 21:00:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-이벤트-핸들러&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC&quot; aria-label=&quot;리액트 이벤트 핸들러 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 이벤트 핸들러&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan with Wecode]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jun 2019 02:05:41 GMT</lastBuildDate><item><title><![CDATA[[알고리즘] 가장 자주 등장한 숫자 리턴하기]]></title><description><![CDATA[웹개발때 알아야할 개념]]></description><link>https://rurusyu.github.io//posts/algorithmn-02/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-02/</guid><pubDate>Thu, 27 Jun 2019 10:57:11 GMT</pubDate><content:encoded>&lt;p&gt;문제)
+nums는 숫자로 이루어진 배열입니다.
+가장 자주 등장한 숫자를 k 개수만큼 return해주세요.
+=&gt; 가장 자주 등장한 숫자 k만큼 선착순으로 끊기&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;nums = [1,1,1,2,2,3],
+k = 2
+
+return [1,2]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;nums = [1]
+k = 1
+
+return [1]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;해결방법)&lt;/p&gt;
+&lt;p&gt;객체에 등장한 숫자만큼 카운트해서 {숫자: 카운트} 한 것을 배열에 담아
+sort를 이용해서 선착순 자르기.&lt;/p&gt;
+&lt;p&gt;풀이법)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function topK(nums, k) {
+
+  let result =[];  
+  let numsArr =[]; 
+  let numsObj={};
+  
+  for(let i=0; i&amp;lt;nums.length; i++){
+    if(!numsObj[nums[i]]){
+      numsObj[nums[i]] = 1;
+    }else{
+      numsObj[nums[i]]++;
+    }
+  }
+
+  for(let key in numsObj){
+  let newNumObj={};
+    newNumObj[key] = numsObj[key]
+    numsArr.push(newNumObj);
+  }
+  
+  numsArr.sort((a,b)=&amp;gt;(Object.values(b) &amp;gt; Object.values(a) ? 1 : -1))
+ 
+  for(let i=0; i&amp;lt;k; i++){
+    for(let key in numsArr[i]){
+      result.push(Number(key))
+    }
+  }
+ 
+ return result
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;너무 지져분…했다 ㅠ&lt;/p&gt;
+&lt;p&gt;멘토님 답안&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function topK(nums, k) {
+    let obj = {};
+    let arr = [];
+    
+    nums.forEach(el =&amp;gt; {
+        if (obj[el]) {
+            obj[el]++;
+        } else {
+            obj[el] = 1;
+        }
+    });
+    
+    for (let properyName in obj) {
+        arr.push([properyName, obj[properyName]]);
+    }
+    
+    return arr.sort((a, b) =&amp;gt; (b[1] - a[1])).slice(0,k).map(el =&amp;gt; Number(el[0]));
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;역시 깔끔하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[React] Event Handle, state 상태관리, jsx for문 ]]></title><description><![CDATA[리액트 event]]></description><link>https://rurusyu.github.io//posts/react-event/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/react-event/</guid><pubDate>Wed, 19 Jun 2019 21:00:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-이벤트-핸들러&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC&quot; aria-label=&quot;리액트 이벤트 핸들러 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 이벤트 핸들러&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;트윗메인화면에 트윗을 입력하고 버튼 누르면 아래에 트윗 리스트 나오게 한다.&lt;/li&gt;
 &lt;li&gt;트윗메인화면에서 textarea는 TweetRightBox라는 컴포넌트로 불러와서 메인화면에 조립했다.&lt;/li&gt;
@@ -82,6 +148,56 @@
 (데이터와 배열)&lt;/li&gt;
 &lt;li&gt;jsx에서 for문 돌릴때 키값이 필요하다. &lt;/li&gt;
 &lt;li&gt;화면에 자료 뿌리는 것은 html부분은 통상 for나 map을 이용해서 뿌리고, 그사이에 데이터를 넣어준다. &lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Ajax, CORS, fetch, GET,POST,JSON ]]></title><description><![CDATA[웹개발때 알아야할 개념]]></description><link>https://rurusyu.github.io//posts/ajax-cors-fetch-json-get-post/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/ajax-cors-fetch-json-get-post/</guid><pubDate>Wed, 19 Jun 2019 21:00:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;ajax&quot;&gt;&lt;a href=&quot;#ajax&quot; aria-label=&quot;ajax permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ajax&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;AJAX는 Asynchronous JavaScript And XML&lt;/li&gt;
+&lt;li&gt;필요할 때 api를 호출하고, 바꾸고 싶은 DOM 부분만 바꿔주는 것이 AJAX의 핵심&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;json&quot;&gt;&lt;a href=&quot;#json&quot; aria-label=&quot;json permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSON&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;13일의 금요일 제이슨이 아님&lt;/li&gt;
+&lt;li&gt;JavaScript Object Notation의 줄임말&lt;/li&gt;
+&lt;li&gt;프론트엔드의 언어는 자바스크립트이고 백엔드의 언어는 여러가지이다. 각 언어마다 데이터를 주고 받아야하는데,
+그때마다 다른 양식으로 준다면??? 프론트를 구성하는 자바스크립트에 기준을 맞춘 방식임.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;규칙&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;{ 로 시작해서 } 로 끝난다.&lt;/li&gt;
+&lt;li&gt;key는 무조건 &quot;&quot; 쌍따옴표를 붙여줘야한다.&lt;/li&gt;
+&lt;li&gt;value에 string이 올 경우에도 무조건 &quot;&quot; 쌍따옴표를 붙여줘야한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다음에 데이터가 더 있을 때만 , comma를 붙일 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;cors&quot;&gt;&lt;a href=&quot;#cors&quot; aria-label=&quot;cors permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CORS&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;CORS는 Cross Origin Resource Sharing 의 줄임말로, 한국어로는 ‘동일출처정책’이라고 하는데 보통은 CORS(씨오알에스)라고 한다.&lt;/li&gt;
+&lt;li&gt;왜 생기냐? 호출하는 쪽의 도메인주소와, 호출당하는 쪽의 도메인주소가 일치하지 않을 때, 브라우져가 보안상의 이유로 차단한다.&lt;/li&gt;
+&lt;li&gt;통상은 백엔드 개발자에게 말하면 조치를 해준다 해서 그냥 넘기지 말고, 반드시 어떻게 처리하는지 알도록!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;get-post방식&quot;&gt;&lt;a href=&quot;#get-post%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;get post방식 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GET, POST방식&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GET은 주소줄에 값이 ?뒤에 쌍으로 이어붙고 POST는 숨겨져서(body안에) 보내진다.&lt;/li&gt;
+&lt;li&gt;POST방식은 바디안에 데이터 들어오기때문에 백엔드쪽에서는 바디를 파싱할 수 있어야한다.&lt;/li&gt;
+&lt;li&gt;GET은 URL에 이어붙기 때문에 길이제한이 있어서 많은양의 데이터는 보내기 어렵고 POST는 많은 양의 보내기에도 적합하다.(역시 용량제한은 있지만)&lt;/li&gt;
+&lt;li&gt;GET은 값을 조회할때 사용, POST는 값을 생성, 수정할때 사용&lt;/li&gt;
+&lt;li&gt;HTTP메소드의 일환으로 6가지 정도 있다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;fetch&quot;&gt;&lt;a href=&quot;#fetch&quot; aria-label=&quot;fetch permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;fetch()&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;API를 호출할때 사용하는 함수&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;패턴이 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fetch(&amp;#39;api주소&amp;#39;)
+.then(function(response) {     
+return response.json();   
+})   
+.then(function(myJson) {     
+//응답 받은 data로 뭔가 한다. 
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[[React] Props, JSX, Router]]></title><description><![CDATA[리액트 prop]]></description><link>https://rurusyu.github.io//posts/react-props/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/react-props/</guid><pubDate>Tue, 18 Jun 2019 23:37:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;props&quot;&gt;&lt;a href=&quot;#props&quot; aria-label=&quot;props permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Props&lt;/h3&gt;
 &lt;p&gt;보통 Props는 부모컴포넌트에서 자식 컴포넌트로 데이터를 이동할 때 준다고 한다.&lt;/p&gt;
 &lt;p&gt;그럼 어떻게 주는데? 초보자 입장에서는 강의따라하면 알아듣지만, 막상 혼자 해보려면 힘들다..&lt;/p&gt;
@@ -134,7 +250,38 @@ const Login =()=&amp;gt;{
 
 예를 들어 &amp;lt;Link&amp;gt;(a태그로 렌더링되는), &amp;lt;BrowserRouter&amp;gt;와 같은 컴포넌트들이 있습니다.  
 
-따라서, 코어까지 필요하지 않다면? 선택은 나의 몫&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[개발환경설정] 개발환경 셋팅]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/setting-develop-enviorment/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/setting-develop-enviorment/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h2 id=&quot;리눅스-디렉토리&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC&quot; aria-label=&quot;리눅스 디렉토리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리눅스 디렉토리&lt;/h2&gt;
+따라서, 코어까지 필요하지 않다면? 선택은 나의 몫&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[알고리즘 문제] 1일차 twoSum]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/algorithmn-problem-1/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-problem-1/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* 문제
+twoSum함수에 숫자배열과 &amp;#39;특정 수&amp;#39;를 인자로 넘기면,
+더해서 &amp;#39;특정 수&amp;#39;가 나오는 index를 배열에 담아 return해 주세요.
+
+nums: 숫자 배열
+target: 두 수를 더해서 나올 수 있는 합계
+return: 두 수의 index를 가진 숫자 배열
+
+
+예를 들어,
+nums은 [4, 9, 11, 14]
+target은 13 
+
+nums[0] + nums[1] = 4 + 9 = 13 이죠?
+
+그러면 [0, 1]이 return 되어야 합니다.
+
+* 가정
+target으로 보내는 합계의 조합은 배열 전체 중에 2개 밖에 없다고 가정하겠습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Leetcode 1번 문제다.&lt;/p&gt;
+&lt;h3 id=&quot;요구사항1-두개의-숫자의-합이-target과-같아야함&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD1-%EB%91%90%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%95%A9%EC%9D%B4-target%EA%B3%BC-%EA%B0%99%EC%95%84%EC%95%BC%ED%95%A8&quot; aria-label=&quot;요구사항1 두개의 숫자의 합이 target과 같아야함 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항1. 두개의 숫자의 합이 target과 같아야함&lt;/h3&gt;
+&lt;h3 id=&quot;요구사항2-두개-숫자의-인덱스값을-리턴받는다&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD2-%EB%91%90%EA%B0%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%92%EC%9D%84-%EB%A6%AC%ED%84%B4%EB%B0%9B%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;요구사항2 두개 숫자의 인덱스값을 리턴받는다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항2. 두개 숫자의 인덱스값을 리턴받는다.&lt;/h3&gt;
+&lt;p&gt;풀이)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const twoSum = (nums, target) =&amp;gt; {
+   for(let i=0; i&amp;lt;nums.length; i++){
+     for(let j=0; j&amp;lt;nums.length; j++){
+       if(nums[j] === target - nums[i]){
+         return [i, j];
+       }
+     }
+   }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[개발환경설정] 개발환경 셋팅]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/setting-develop-enviorment/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/setting-develop-enviorment/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h2 id=&quot;리눅스-디렉토리&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC&quot; aria-label=&quot;리눅스 디렉토리 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리눅스 디렉토리&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;   리눅스의 디렉토리는 트리구조이며, 크게 분류했을 때 2가지이다.
      1. 시스템 디렉토리 : 시스템 돌아가는데 필요한 디렉토리
      2. 유저 디렉토리 : 우리이름으로 된 디렉토리이고, 홈 디렉토리는 유저의 공간이다.
@@ -224,38 +371,7 @@ history : 일정갯수 이상 사용했던 명령어를 특정 파일에 저장�
 ps : 현재 돌고 있는 프로세스를 보여주는 가장 기본적인 명령어
 man : 메뉴얼 확인 =&gt; tldr 설치해서 사용함.(메뉴얼은 읽기 힘듦 그래서 설치함)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/cat&quot;&gt;http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/cat&lt;/a&gt; 참고&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[알고리즘 문제] 1일차 twoSum]]></title><description><![CDATA[알고리즘 문제풀기]]></description><link>https://rurusyu.github.io//posts/algorithmn-problem-1/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-problem-1/</guid><pubDate>Mon, 17 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* 문제
-twoSum함수에 숫자배열과 &amp;#39;특정 수&amp;#39;를 인자로 넘기면,
-더해서 &amp;#39;특정 수&amp;#39;가 나오는 index를 배열에 담아 return해 주세요.
-
-nums: 숫자 배열
-target: 두 수를 더해서 나올 수 있는 합계
-return: 두 수의 index를 가진 숫자 배열
-
-
-예를 들어,
-nums은 [4, 9, 11, 14]
-target은 13 
-
-nums[0] + nums[1] = 4 + 9 = 13 이죠?
-
-그러면 [0, 1]이 return 되어야 합니다.
-
-* 가정
-target으로 보내는 합계의 조합은 배열 전체 중에 2개 밖에 없다고 가정하겠습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Leetcode 1번 문제다.&lt;/p&gt;
-&lt;h3 id=&quot;요구사항1-두개의-숫자의-합이-target과-같아야함&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD1-%EB%91%90%EA%B0%9C%EC%9D%98-%EC%88%AB%EC%9E%90%EC%9D%98-%ED%95%A9%EC%9D%B4-target%EA%B3%BC-%EA%B0%99%EC%95%84%EC%95%BC%ED%95%A8&quot; aria-label=&quot;요구사항1 두개의 숫자의 합이 target과 같아야함 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항1. 두개의 숫자의 합이 target과 같아야함&lt;/h3&gt;
-&lt;h3 id=&quot;요구사항2-두개-숫자의-인덱스값을-리턴받는다&quot;&gt;&lt;a href=&quot;#%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD2-%EB%91%90%EA%B0%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%92%EC%9D%84-%EB%A6%AC%ED%84%B4%EB%B0%9B%EB%8A%94%EB%8B%A4&quot; aria-label=&quot;요구사항2 두개 숫자의 인덱스값을 리턴받는다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;요구사항2. 두개 숫자의 인덱스값을 리턴받는다.&lt;/h3&gt;
-&lt;p&gt;풀이)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const twoSum = (nums, target) =&amp;gt; {
-   for(let i=0; i&amp;lt;nums.length; i++){
-     for(let j=0; j&amp;lt;nums.length; j++){
-       if(nums[j] === target - nums[i]){
-         return [i, j];
-       }
-     }
-   }
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[Gatsby.js] 개츠비로 블로그 만들기]]></title><description><![CDATA[리액트 라이브러리의 한 종류 인 gatsby.js.로 블로그 만들기]]></description><link>https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</guid><pubDate>Fri, 14 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-라이브러리는-프론트-엔드-3대장-중-하나이며&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%8A%94-%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%97%94%EB%93%9C-3%EB%8C%80%EC%9E%A5-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B4%EB%A9%B0&quot; aria-label=&quot;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며,&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[Gatsby.js] 개츠비로 블로그 만들기]]></title><description><![CDATA[리액트 라이브러리의 한 종류 인 gatsby.js.로 블로그 만들기]]></description><link>https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/Create-blogging-with-Gatsby/</guid><pubDate>Fri, 14 Jun 2019 16:02:11 GMT</pubDate><content:encoded>&lt;h3 id=&quot;리액트-라이브러리는-프론트-엔드-3대장-중-하나이며&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%8A%94-%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%97%94%EB%93%9C-3%EB%8C%80%EC%9E%A5-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B4%EB%A9%B0&quot; aria-label=&quot;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리액트 라이브러리는 프론트 엔드 3대장 중 하나이며,&lt;/h3&gt;
 &lt;h4 id=&quot;cracreate-react-app-gatsbyjs-nextjs-로-실행할-수-있다&quot;&gt;&lt;a href=&quot;#cracreate-react-app-gatsbyjs-nextjs-%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4&quot; aria-label=&quot;cracreate react app gatsbyjs nextjs 로 실행할 수 있다 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CRA(create-react-app), Gatsby.js, Next.js 로 실행할 수 있다.&lt;/h4&gt;
 &lt;p&gt;이번에는 그 중에서 Gatsby를 이용해서 블로그를 만들어 보려고 한다.  &lt;/p&gt;
 &lt;h1 id=&quot;gatsby-js-란-무엇인가&quot;&gt;&lt;a href=&quot;#gatsby-js-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&quot; aria-label=&quot;gatsby js 란 무엇인가 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Gatsby JS 란 무엇인가&lt;/h1&gt;
