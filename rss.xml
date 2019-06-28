@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan with Wecode]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jun 2019 02:05:41 GMT</lastBuildDate><item><title><![CDATA[[알고리즘] 가장 자주 등장한 숫자 리턴하기]]></title><description><![CDATA[웹개발때 알아야할 개념]]></description><link>https://rurusyu.github.io//posts/algorithmn-02/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-02/</guid><pubDate>Thu, 27 Jun 2019 10:57:11 GMT</pubDate><content:encoded>&lt;p&gt;문제)
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by nathan with Wecode]]></title><description><![CDATA[Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.]]></description><link>https://rurusyu.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 28 Jun 2019 02:13:42 GMT</lastBuildDate><item><title><![CDATA[[알고리즘] 배열 그래프의 가장 넓이 구하기]]></title><description><![CDATA[알고리즘]]></description><link>https://rurusyu.github.io//posts/algorithmn-03/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-03/</guid><pubDate>Fri, 28 Jun 2019 10:59:11 GMT</pubDate><content:encoded>&lt;p&gt;인자인 height는 숫자로 이루어진 배열입니다.
+그래프로 생각한다면 y축의 값이고, 높이 값을 갖고 있습니다.&lt;/p&gt;
+&lt;p&gt;아래의 그래프라면 height 배열은 [1, 8, 6, 2, 5, 4, 8, 3, 7] 입니다.
+&lt;img src=&quot;/media/algorithmn3.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;저 그래프에 물을 담는다고 생각하고,
+물을 담을 수 있는 가장 넓은 면적의 값을 반환해주세요.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;가정
+배열의 길이는 2이상입니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getMaxArea(height) {
+let width = height.length-1;
+let result = [];
+let sqare = 0;
+
+for(let i=0; i&amp;lt;height.length; i++){
+for(let j=1; j&amp;lt;height.length; j++){
+  if(height[i] &amp;lt;= height[j]){
+    sqare = height[i] * Math.abs(j-i);
+    result.push(sqare);
+  }
+}
+}
+result.sort((a,b) =&amp;gt; b-a);
+return result[0];
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;멘토님 솔루션&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function getMaxArea(height) {
+    let size = 0;
+    
+    for (let i = 0; i &amp;lt; height.length; i++) {
+        for (let j = i+1; j &amp;lt; height.length; j++) {
+            size = Math.max(Math.min(height[i], height[j]) * (j-i), size);
+        }
+    }
+    
+    return size;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[[알고리즘] 가장 자주 등장한 숫자 리턴하기]]></title><description><![CDATA[웹개발때 알아야할 개념]]></description><link>https://rurusyu.github.io//posts/algorithmn-02/</link><guid isPermaLink="false">https://rurusyu.github.io//posts/algorithmn-02/</guid><pubDate>Thu, 27 Jun 2019 10:57:11 GMT</pubDate><content:encoded>&lt;p&gt;문제)
 nums는 숫자로 이루어진 배열입니다.
 가장 자주 등장한 숫자를 k 개수만큼 return해주세요.
 =&gt; 가장 자주 등장한 숫자 k만큼 선착순으로 끊기&lt;/p&gt;
